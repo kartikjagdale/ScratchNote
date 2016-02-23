@@ -32,6 +32,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+#####################Custom Gems Added By VoidZero#####################################
+
+#Slim templating language much better than haml
+gem 'slim', '~> 3.0', '>= 3.0.6'
+#Simple form
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+#Devise for Flexible Authentication
+gem 'devise', '~> 3.5', '>= 3.5.6'
+
+
+#####################~END~################################################
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
