@@ -2,18 +2,18 @@ class ScratchesController < ApplicationController
   before_action :find_scratch, only: [:show, :edit, :update, :destroy]
   
   def index
-    @scratches = Scratch.all.order("created_at DESC")
+    @scratches = current_user.scratches.all.order("created_at DESC")
   end
 
   def show
   end
 
   def new
-    @scratch = Scratch.new
+    @scratch = current_user.scratches.build
   end
 
   def create
-    @scratch = Scratch.new(scratch_params)
+    @scratch = current_user.scratches.build(scratch_params)
     if @scratch.save
       redirect_to @scratch
     else
@@ -40,7 +40,7 @@ class ScratchesController < ApplicationController
   private
 
   def find_scratch
-    @scratch = Scratch.find(params[:id])
+    @scratch = current_user.scratches.find(params[:id])
   end
 
   def scratch_params
