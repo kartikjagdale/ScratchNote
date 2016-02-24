@@ -1,0 +1,5 @@
+- @scratches.each do |scratch|
+  h3
+    = link_to scratch.title, scratch
+  p
+    = time_ago_in_words(scratch.created_at)
