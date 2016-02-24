@@ -3,3 +3,8 @@ h1
 p 
   = @scratch.content
 = link_to "All Scratches", scratches_path
+p
+  = link_to "Edit", edit_scratch_path(@scratch)
+p
+  = link_to "Delete", scratch_path(@scratch), method: :delete, 
+                                            data: {confirm: "Are you sure?"}

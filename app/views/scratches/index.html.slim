@@ -3,3 +3,5 @@
     = link_to scratch.title, scratch
   p
     = time_ago_in_words(scratch.created_at)
+p
+  = link_to 'New Scratch', new_scratch_path

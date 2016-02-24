@@ -25,9 +25,16 @@ class ScratchesController < ApplicationController
   end
 
   def update
+    if @scratch.update(scratch_params)
+      redirect_to @scratch
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @scratch.destroy
+    redirect_to scratches_path
   end
 
   private
