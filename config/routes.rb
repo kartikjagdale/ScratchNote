@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
+  resources :scratches
+
+  authenticated :user do
+    #we can not have two roots hence another name
+    root 'scratches#index', as: 'authenticated_user'
+  end
+
   root 'welcome#index'
 
-  resources :scratches
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
