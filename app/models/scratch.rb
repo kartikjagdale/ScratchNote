@@ -11,5 +11,10 @@
 #
 
 class Scratch < ActiveRecord::Base
-	belongs_to :user
+  belongs_to :user
+  
+  # Model Methods
+  def self.get_all_scratches(user)
+    user.scratches.all.order("created_at DESC")
+  end
 end

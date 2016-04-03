@@ -14,7 +14,7 @@ class ScratchesController < ApplicationController
   before_action :find_scratch, only: [:show, :edit, :update, :destroy]
   
   def index
-    @scratches = get_all_scratches(current_user)
+    @scratches = Scratch.get_all_scratches(current_user)
   end
 
   def show

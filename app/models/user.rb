@@ -24,11 +24,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
    # Associations
    has_many :scratches
-
-   # Model Methods
-   def get_all_scratches(user)
-   	user.scratches.all.order("created_at DESC")
-   end
-
-
 end
