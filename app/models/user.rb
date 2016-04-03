@@ -22,6 +22,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-   #association
+   # Associations
    has_many :scratches
+
+   # Model Methods
+   def get_all_scratches(user)
+   	user.scratches.all.order("created_at DESC")
+   end
+
+
 end

@@ -14,7 +14,7 @@ class ScratchesController < ApplicationController
   before_action :find_scratch, only: [:show, :edit, :update, :destroy]
   
   def index
-    @scratches = current_user.scratches.all.order("created_at DESC")
+    @scratches = get_all_scratches(current_user)
   end
 
   def show
@@ -58,6 +58,5 @@ class ScratchesController < ApplicationController
   def scratch_params
     params.require(:scratch).permit(:title, :content)
   end
-
 
 end
