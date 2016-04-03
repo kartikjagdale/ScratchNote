@@ -35,18 +35,28 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #####################Custom Gems Added By VoidZero#####################################
 
-#Slim templating language much better than haml
+# Slim templating language much better than haml
 gem 'slim', '~> 3.0', '>= 3.0.6'
-#Simple form
+# Simple form
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
-#Devise for Flexible Authentication
+# Devise for Flexible Authentication
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
+# Twitter Bootstrap
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+# Fontawesome
+gem "font-awesome-rails"
 
 #####################~END~################################################
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # For Debugging
+  gem 'pry'
+  # To annotate all your models, tests, fixtures, and factories
+  gem 'annotate'
 end
 
 group :development do

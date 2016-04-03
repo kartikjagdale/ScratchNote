@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'welcome/index'
-  resources :scratches
-
-  authenticated :user do
-    #we can not have two roots hence another name
-    root 'scratches#index', as: 'authenticated_user'
-  end
 
   root 'welcome#index'
 
+  get 'welcome/index'
   
+  resources :scratches
+  
+  devise_for :users
 
-
+  authenticated :user do
+    # we can not have two roots hence another name
+    root 'scratches#index', as: 'authenticated_user'
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
