@@ -5,3 +5,7 @@
     = time_ago_in_words(scratch.created_at)
 p
   = link_to 'New Scratch', new_scratch_path
+
+
+
+= link_to ' Sign Out', destroy_user_session_path, method: :delete

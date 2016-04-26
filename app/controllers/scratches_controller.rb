@@ -12,7 +12,7 @@
 
 class ScratchesController < ApplicationController
   before_action :find_scratch, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_user!
   def index
     @scratches = Scratch.get_all_scratches(current_user)
   end
