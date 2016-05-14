@@ -1,11 +1,16 @@
-h2
-  | Sign up
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-    = f.input :password_confirmation, required: true
-  .form-actions
-    = f.button :submit, "Sign up"
-= render "devise/shared/links"
+.container-fluid
+  .row-fluid
+  .col-md-offset-4.col-md-4
+    h2.form-signin-heading
+      | Sign up
+    = simple_form_for resource, as: resource_name, url: registration_path(resource_name),
+      defaults: { label:false } do |f|
+      = f.error_notification
+      = f.input :email, required: true, autofocus: true, placeholder: 'Email address', input_html: {class: 'form-control'}
+      = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+      placeholder: 'Password', input_html: {class: 'form-control'}
+      = f.input :password_confirmation, required: true, placeholder: 'Confirm Password', input_html: {class: 'form-control'}
+      .form-actions style="margin-bottom: 10px"
+      = f.button :submit, "Sign up", class: 'btn btn-lg btn-primary btn-block'
+    span.pull-right
+      = render "devise/shared/links"
