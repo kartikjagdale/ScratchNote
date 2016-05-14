@@ -42,6 +42,10 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 # Devise for Flexible Authentication
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
+# Bootstrap with Less
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 #####################~END~################################################
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
