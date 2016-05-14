@@ -4,11 +4,26 @@ html
     title
       | ScratchNote
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body
-    p.notice
-      = notice
-    p.alert
-      = alert
-    = yield
+  - if content_for(:body_attributes)
+    body
+      section#container
+        = render 'shared/header'
+        section.main-content
+          section.wrapper
+            p.notice= notice
+            p.alert= alert
+            .main-body= yield
+        = render 'shared/footer'
+        = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  - else
+    body
+      section#container
+        = render 'shared/header'
+        section.main-content
+          section.wrapper
+          p.notice= notice
+          p.alert= alert
+          .main-body= yield
+        = render 'shared/footer'
+        = javascript_include_tag 'application', 'data-turbolinks-track' => true
