@@ -46,11 +46,13 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+
+# Rails Admin
+gem 'rails_admin'
+
 #####################~END~################################################
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  # For Debugging
   gem 'pry'
   # To annotate all your models, tests, fixtures, and factories
   gem 'annotate'
