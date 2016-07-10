@@ -1,3 +1,4 @@
+require Rails.root.join('lib/rails_admin_scratch_upload.rb')
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -30,8 +31,19 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
+    scratch_upload do 
+      visible do
+        bindings[:abstract_model].model.to_s == 'Scratch'
+      end
+    end
+
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
+
+  # config.navigation_static_links = {
+  #   'Scratch Upload' => "/rails_admin/payment/0/payment_refund"
+  # }
+
 end

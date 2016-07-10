@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  admin:
+    actions:
+      scratch_upload:
+        title: 'Scratch Upload'
+        menu: 'Scratch Upload'
+        breadcrumb: 'Scrathc Upload'
